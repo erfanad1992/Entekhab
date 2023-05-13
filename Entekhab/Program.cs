@@ -1,9 +1,11 @@
 using Entekhab.Endpoints.WebApi.Extensions;
+using Entekhab.Infrastructure.EfPersistance.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.ConfigureServices(builder.Configuration);
+builder.Services.AddPersistenceEntityFrameworkServices(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
