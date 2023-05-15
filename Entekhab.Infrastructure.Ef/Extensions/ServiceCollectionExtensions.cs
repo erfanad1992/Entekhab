@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entekhab.Domain;
+using Entekhab.Infrastructure.EfPersistance.PersonInfos;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,7 +18,8 @@ namespace Entekhab.Infrastructure.EfPersistance.Extensions
  
             });
 
-            services.AddScoped<DbContext>((sp) => sp.GetRequiredService<EntekhabDbContext>()); 
+            services.AddScoped<DbContext>((sp) => sp.GetRequiredService<EntekhabDbContext>());
+            services.AddTransient<IPersonInfoRepository, PersonInfoRepository>();
 
 
         }

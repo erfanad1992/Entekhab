@@ -1,4 +1,5 @@
-﻿using Entekhab.Infrastructure.EfPersistance.TestModelEntityConfigurations;
+﻿using Entekhab.Infrastructure.EfPersistance.PersonInfoEntityConfigurations;
+using Entekhab.Infrastructure.EfPersistance.TestModelEntityConfigurations;
 using Microsoft.EntityFrameworkCore;
 namespace Entekhab.Infrastructure.EfPersistance
 {
@@ -11,6 +12,7 @@ namespace Entekhab.Infrastructure.EfPersistance
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new TestModelEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new PersonInfoEntityConfiguration());
 
             base.OnModelCreating(modelBuilder);
 

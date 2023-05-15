@@ -14,7 +14,8 @@
             decimal basicSalary,
             decimal allowance,
             decimal transportation
-            )
+,
+            decimal salaryAfterTax)
         {
             Id = id;
             Name = name;
@@ -23,6 +24,7 @@
             BasicSalary = basicSalary;
             Allowance = allowance;
             Transportation = transportation;
+            SalaryAfterTax = salaryAfterTax;
         }
         public Guid Id { get; set; }
         public string Name { get; set; }
@@ -31,6 +33,7 @@
         public decimal BasicSalary { get; set; }
         public decimal Allowance { get; set; }
         public decimal Transportation { get; set; }
+        public decimal SalaryAfterTax { get; set; }
 
     }
 }
