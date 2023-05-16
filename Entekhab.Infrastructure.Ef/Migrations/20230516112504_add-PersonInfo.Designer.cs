@@ -4,6 +4,7 @@ using Entekhab.Infrastructure.EfPersistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entekhab.Infrastructure.EfPersistance.Migrations
 {
     [DbContext(typeof(EntekhabDbContext))]
-    partial class EntekhabDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230516112504_add-PersonInfo")]
+    partial class addPersonInfo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -11,6 +11,8 @@ namespace Entekhab.Domain
         Task<bool> IsExistsAsync(Expression<Func<PersonInfo, bool>> predicate);
         void Remove(PersonInfo personInfo);
 
+        Task SaveEntityChanges();
+
 
     }
 }

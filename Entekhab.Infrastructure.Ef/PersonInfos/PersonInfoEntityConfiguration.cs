@@ -10,6 +10,7 @@ namespace Entekhab.Infrastructure.EfPersistance.PersonInfos
         {
             builder.HasKey(o => o.Id);
             builder.Property(o => o.Name);
+
             builder.ToTable(nameof(PersonInfo));
         }
     }

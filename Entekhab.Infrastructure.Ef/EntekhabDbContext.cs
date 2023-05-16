@@ -1,4 +1,4 @@
-﻿using Entekhab.Infrastructure.EfPersistance.PersonInfoEntityConfigurations;
+﻿using Entekhab.Infrastructure.EfPersistance.PersonInfos;
 using Entekhab.Infrastructure.EfPersistance.TestModelEntityConfigurations;
 using Microsoft.EntityFrameworkCore;
 namespace Entekhab.Infrastructure.EfPersistance

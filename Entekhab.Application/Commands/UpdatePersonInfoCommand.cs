@@ -2,7 +2,7 @@
 
 namespace Entekhab.Applications.Commands
 {
-    public class AddEmployeeDataCommand : IRequest<Guid>
+    public class UpdatePersonInfoCommand : IRequest<Guid>
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
@@ -11,6 +11,6 @@ namespace Entekhab.Applications.Commands
         public decimal BasicSalary { get; set; }
         public decimal Allowance { get; set; }
         public decimal Transportation { get; set; }
-        public int tax { get; set; }
+        public decimal Tax { get; set; }
     }
 }

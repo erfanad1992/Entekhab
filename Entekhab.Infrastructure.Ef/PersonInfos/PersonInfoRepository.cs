@@ -34,6 +34,7 @@ namespace Entekhab.Infrastructure.EfPersistance.PersonInfos
         public async  Task InsertAsync(PersonInfo personInfo)
         {
             await  DbSet.AddAsync(personInfo);
+            await SaveEntityChanges();
         }
 
         public async Task<bool> IsExistsAsync(Expression<Func<PersonInfo, bool>> predicate)
@@ -44,6 +45,12 @@ namespace Entekhab.Infrastructure.EfPersistance.PersonInfos
         public  void Remove(PersonInfo personInfo)
         {
             DbSet.Remove(personInfo);
+            SaveEntityChanges();
+        }
+
+        public async Task SaveEntityChanges()
+        {
+           await Context.SaveChangesAsync();
         }
     }
 }

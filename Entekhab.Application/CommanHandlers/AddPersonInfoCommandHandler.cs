@@ -5,17 +5,17 @@ using MediatR;
 
 namespace Entekhab.Applications.CommanHandlers
 {
-    public class AddEmployeeDataCommandHandler : IRequestHandler<AddEmployeeDataCommand,Guid>
+    public class AddPersonInfoCommandHandler : IRequestHandler<AddPersonInfoCommand,Guid>
     {
         private readonly IPersonInfoRepository _repository;
-        public AddEmployeeDataCommandHandler(IPersonInfoRepository repository)
+        public AddPersonInfoCommandHandler(IPersonInfoRepository repository)
         {
             _repository = repository;
         }
-        public async Task<Guid> Handle(AddEmployeeDataCommand command, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(AddPersonInfoCommand command, CancellationToken cancellationToken)
         {
-            OvertimeCalculator overtimeCalculator= new OvertimeCalculator();
-             var salaryAfterTax =   overtimeCalculator.CalculateSalary(command.BasicSalary,command.Allowance,command.Transportation,command.tax);
+          
+            var salaryAfterTax = OvertimeCalculator.CalculateSalary(command.BasicSalary,command.Allowance,command.Transportation,command.Tax);
             var personInfo = new PersonInfo
                 (
                 Guid.NewGuid(),
