@@ -5,25 +5,27 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entekhab.Endpoints.WebApi", "Entekhab\Entekhab.Endpoints.WebApi.csproj", "{7E9231F4-E16E-457A-AE61-896B0BC22E47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entekhab.Infrastructure.EfPersistance", "Entekhab.Infrastructure.Ef\Entekhab.Infrastructure.EfPersistance.csproj", "{BAE04BF8-C390-4265-AD70-3A14262D8383}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entekhab.Infrastructure.EfPersistance", "Entekhab.Infrastructure.Ef\Entekhab.Infrastructure.EfPersistance.csproj", "{BAE04BF8-C390-4265-AD70-3A14262D8383}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{04FE2F76-89C9-45A0-BFC2-0A09D3CE74D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{9E7E1813-2A23-4AF1-9DE8-ADD55DDF6A3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entekhab.Infrastructure.Dapper", "Entekhab.Infrastructure.Dapper\Entekhab.Infrastructure.Dapper.csproj", "{C749A3E6-2C61-4869-ACAA-35815AD4A0E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entekhab.Infrastructure.Dapper", "Entekhab.Infrastructure.Dapper\Entekhab.Infrastructure.Dapper.csproj", "{C749A3E6-2C61-4869-ACAA-35815AD4A0E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{CDDB3BA6-B095-474F-AF85-4F71BADB463B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domains", "Domains", "{2ED15970-0A75-430E-9BB8-FEB03940BAFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entekhab.Domain", "Entekhab.Domain\Entekhab.Domain.csproj", "{1FDCEB2E-731E-4CCE-AD6C-E3C6178152EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entekhab.Domain", "Entekhab.Domain\Entekhab.Domain.csproj", "{1FDCEB2E-731E-4CCE-AD6C-E3C6178152EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entekhab.OvetimePolicies", "Entekhab.OvetimePolicies\Entekhab.OvetimePolicies.csproj", "{E08B454C-135A-4794-BF93-22527935618F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entekhab.OvetimePolicies", "Entekhab.OvetimePolicies\Entekhab.OvetimePolicies.csproj", "{E08B454C-135A-4794-BF93-22527935618F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entekhab.Applications", "Entekhab.Application\Entekhab.Applications.csproj", "{5E8B8373-7297-45C2-B787-31877965EE9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entekhab.Applications", "Entekhab.Application\Entekhab.Applications.csproj", "{5E8B8373-7297-45C2-B787-31877965EE9C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{139D21FB-6FAF-4A53-B962-B13CE24A1C07}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E336AF46-91EE-4B20-97A9-00850E1C4BE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{5E8B8373-7297-45C2-B787-31877965EE9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E8B8373-7297-45C2-B787-31877965EE9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E8B8373-7297-45C2-B787-31877965EE9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E336AF46-91EE-4B20-97A9-00850E1C4BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E336AF46-91EE-4B20-97A9-00850E1C4BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E336AF46-91EE-4B20-97A9-00850E1C4BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E336AF46-91EE-4B20-97A9-00850E1C4BE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

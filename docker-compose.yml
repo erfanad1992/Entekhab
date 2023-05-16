@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  entekhab.endpoints.webapi:
+    image: ${DOCKER_REGISTRY-}entekhabendpointswebapi
+    build:
+      context: .
+      dockerfile: Entekhab\Dockerfile
