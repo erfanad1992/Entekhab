@@ -1,4 +1,5 @@
 ﻿using Entekhab.Applications.Commands;
+using Entekhab.Applications.Queries;
 using Entekhab.Endpoints.WebApi.Controllers.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -17,10 +18,36 @@ namespace Entekhab.Endpoints.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(string id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesDefaultResponseType]
+        public async Task<IActionResult> GetById(Guid id,CancellationToken cancellationToken)
         {
-            return Ok("test");
+            GetPersonInfoQuery queryFilter = new GetPersonInfoQuery()
+            {
+                Id= id
+            };
+            var result = await _mediator.Send(queryFilter, cancellationToken);
+            return Ok(result);
         }
+
+        [HttpGet("getRange/{name}/{family}/{startDate}/{endDate}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesDefaultResponseType]
+        public async Task<IActionResult> GetRange(string name,string family,DateTimeOffset startDate,DateTimeOffset endDate, CancellationToken cancellationToken)
+        {
+            GetRangePersonInfoQuery queryFilter = new GetRangePersonInfoQuery()
+            {
+                Name= name,
+                Family= family,
+                StartDate= startDate,
+                EndDate= endDate,
+            };
+            var result = await _mediator.Send(queryFilter, cancellationToken);
+            return Ok(result);
+        }
+
 
         [HttpPost()]
         [ProducesResponseType(StatusCodes.Status200OK)]
