@@ -8,15 +8,19 @@ namespace Entekhab.Infrastructure.EfPersistance.PersonInfos
     {
         protected DbContext Context;
         protected DbSet<PersonInfo> DbSet;
+        protected DbSet<Base> BaseDbSet;
 
         public PersonInfoRepository(DbContext context)
         {
             Context = context;
             DbSet = context.Set<PersonInfo>();
+            BaseDbSet = context.Set<Base>();
         }
 
         public async Task<PersonInfo> GetAsync(Guid id)
         {
+            var basesss = BaseDbSet.First(x=>x.Id == 1001);
+
            return await DbSet.SingleOrDefaultAsync(p => p.Id == id);
         }
 

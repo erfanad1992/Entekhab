@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
-	<ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB}</ProjectTypeGuids>
+	<!--<ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB}</ProjectTypeGuids>-->
 
   </PropertyGroup>
 
