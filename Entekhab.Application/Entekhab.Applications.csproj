@@ -16,6 +16,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Entekhab.Domain\Entekhab.Domain.csproj" />
+	  <ProjectReference Include="..\Entekhab.Infrastructure.Dapper\Entekhab.Infrastructure.Dapper.csproj" />
 	  <ProjectReference Include="..\Entekhab.OvetimePolicies\Entekhab.OvetimePolicies.csproj" />
 	</ItemGroup>
 

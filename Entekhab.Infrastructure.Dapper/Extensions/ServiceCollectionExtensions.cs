@@ -1,4 +1,6 @@
 ﻿using Entekhab.Domain;
+using Entekhab.Infrastructure.EfPersistance;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Data;
@@ -11,6 +13,14 @@ namespace Entekhab.Infrastructure.Dapper.Extensions
         public static void AddDapperServices(this IServiceCollection services, IConfiguration configuration)
         {
 
+            services.AddDbContext<EntekhabQueriesDbContext>((serviceProvider, options) =>
+            {
+                options.UseSqlServer("Server=.;Database=SejatDbTest;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=true",
+                    x => x.MigrationsHistoryTable("__EFMigrationsHistory"));
+
+            });
+
+            services.AddScoped<DbContext>((sp) => sp.GetRequiredService<EntekhabQueriesDbContext>());
             services.AddTransient<IDbConnection>(provider =>
             {
 

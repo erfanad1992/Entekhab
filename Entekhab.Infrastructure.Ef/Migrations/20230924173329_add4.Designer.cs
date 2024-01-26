@@ -3,6 +3,7 @@ using Entekhab.Infrastructure.EfPersistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entekhab.Infrastructure.EfPersistance.Migrations
 {
     [DbContext(typeof(EntekhabDbContext))]
-    partial class EntekhabDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230924173329_add4")]
+    partial class add4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,12 +32,9 @@ namespace Entekhab.Infrastructure.EfPersistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MojavezId"));
 
-                    b.Property<int>("TrackingCode")
-                        .HasColumnType("int");
-
                     b.HasKey("MojavezId");
 
-                    b.ToTable("Mojavez", (string)null);
+                    b.ToTable("Mojavez");
                 });
 
             modelBuilder.Entity("Entekhab.Domain.Resid", b =>
@@ -45,12 +45,9 @@ namespace Entekhab.Infrastructure.EfPersistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ResidId"));
 
-                    b.Property<int>("TrackingCode")
-                        .HasColumnType("int");
-
                     b.HasKey("ResidId");
 
-                    b.ToTable("Resid", (string)null);
+                    b.ToTable("Resid");
                 });
 #pragma warning restore 612, 618
         }

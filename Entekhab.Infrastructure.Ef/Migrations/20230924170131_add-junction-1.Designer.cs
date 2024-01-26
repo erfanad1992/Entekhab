@@ -3,6 +3,7 @@ using Entekhab.Infrastructure.EfPersistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entekhab.Infrastructure.EfPersistance.Migrations
 {
     [DbContext(typeof(EntekhabDbContext))]
-    partial class EntekhabDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230924170131_add-junction-1")]
+    partial class addjunction1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,12 +32,9 @@ namespace Entekhab.Infrastructure.EfPersistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MojavezId"));
 
-                    b.Property<int>("TrackingCode")
-                        .HasColumnType("int");
-
                     b.HasKey("MojavezId");
 
-                    b.ToTable("Mojavez", (string)null);
+                    b.ToTable("Mojavez");
                 });
 
             modelBuilder.Entity("Entekhab.Domain.Resid", b =>
@@ -45,12 +45,41 @@ namespace Entekhab.Infrastructure.EfPersistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ResidId"));
 
-                    b.Property<int>("TrackingCode")
-                        .HasColumnType("int");
-
                     b.HasKey("ResidId");
 
-                    b.ToTable("Resid", (string)null);
+                    b.ToTable("Resid");
+                });
+
+            modelBuilder.Entity("MojavezResid", b =>
+                {
+                    b.Property<int>("MojavezesMojavezId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ResidsResidId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MojavezesMojavezId", "ResidsResidId");
+
+                    b.HasIndex("ResidsResidId");
+
+                    b.ToTable((string)null);
+
+                    b.ToView("ResidMojavez", (string)null);
+                });
+
+            modelBuilder.Entity("MojavezResid", b =>
+                {
+                    b.HasOne("Entekhab.Domain.Mojavez", null)
+                        .WithMany()
+                        .HasForeignKey("MojavezesMojavezId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entekhab.Domain.Resid", null)
+                        .WithMany()
+                        .HasForeignKey("ResidsResidId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

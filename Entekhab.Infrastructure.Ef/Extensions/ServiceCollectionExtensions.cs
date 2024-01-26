@@ -13,7 +13,7 @@ namespace Entekhab.Infrastructure.EfPersistance.Extensions
 
             services.AddDbContext<EntekhabDbContext>((serviceProvider, options) =>
             {
-                options.UseSqlServer(configuration.GetConnectionString("SqlServerConnectionString"),
+                options.UseSqlServer("Server=.;Database=SejatDbTest;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=true",
                     x => x.MigrationsHistoryTable("__EFMigrationsHistory"));
  
             });

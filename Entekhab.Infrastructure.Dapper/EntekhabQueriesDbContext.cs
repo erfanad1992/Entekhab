@@ -1,16 +1,17 @@
 ﻿using Entekhab.Domain;
-using Entekhab.Infrastructure.EfPersistance.PersonInfos;
-using Entekhab.Infrastructure.EfPersistance.TestModelEntityConfigurations;
 using Microsoft.EntityFrameworkCore;
-using System.Xml;
 
 namespace Entekhab.Infrastructure.EfPersistance
 {
-    public class EntekhabDbContext : DbContext
+    public class EntekhabQueriesDbContext : DbContext
     {
-        public EntekhabDbContext(DbContextOptions<EntekhabDbContext> options) : base(options)
+        public EntekhabQueriesDbContext(DbContextOptions<EntekhabQueriesDbContext> options) : base(options)
         {
         }
+
+        public virtual DbSet<Resid> Resids { get; set; }
+        public virtual DbSet<Mojavez> Mojavezes { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
